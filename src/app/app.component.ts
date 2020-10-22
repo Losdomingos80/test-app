@@ -22,8 +22,8 @@ export class AppComponent {
     // The user can't close the dialog by clicking outside its body
     dialogConfig.disableClose = true;
     dialogConfig.id = "modal-component";
-    dialogConfig.height = "350px";
-    dialogConfig.width = "600px";
+    dialogConfig.height = "70%";
+    dialogConfig.width = "60%";
     // https://material.angular.io/components/dialog/overview
     const modalDialog = this.matDialog.open(LoginComponent, dialogConfig);
   }
