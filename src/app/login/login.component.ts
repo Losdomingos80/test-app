@@ -1,12 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { FormGroup, FormBuilder } from  '@angular/forms';
 
-export interface Tile {
-  color: string;
-  cols: number;
-  rows: number;
-  text: string;
-}
+
 
 @Component({
   selector: 'app-login',
@@ -14,20 +10,29 @@ export interface Tile {
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  
+  contactForm: FormGroup;
+  odczyt: any;
 
-  constructor(public dialogRef: MatDialogRef<LoginComponent>) { }
+  constructor(public dialogRef: MatDialogRef<LoginComponent>, private formBuilder: FormBuilder) { 
+    this.createContactForm();
+  }
 
-  value = 'Clear me';
-
-  tiles: Tile[] = [
-    {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
-    {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
-    {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
-    {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
-  ];
+  createContactForm(){
+    this.contactForm = this.formBuilder.group({
+      fullName: [''],  
+      email: [''],
+      message: ['']
+    });
+  }
 
   ngOnInit(): void {
   }
+
+  onSubmit() {
+    console.log('Your form data : ', this.contactForm.value );
+    this.odczyt = this.contactForm.value.fullName;
+}
   
   closeModal() {
     this.dialogRef.close();

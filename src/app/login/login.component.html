@@ -1,28 +1,45 @@
-<mat-card>
-    <mat-card-title>
-        Okienko
-        <button class="przycisk" mat-raised-button id="modal-cancel-button" (click)="closeModal()">X</button>
-    </mat-card-title>
-</mat-card>
+<h4 mat-dialog-title>
+  <mat-toolbar role="toolbar" class="task-header">
+      <span> Okienko dialogowe</span>
+      <span class="fx-spacer"></span>
+      <button mat-icon-button (click)="closeModal()">
+          <mat-icon mat-list-icon>close</mat-icon>
+      </button>
+  </mat-toolbar>
+</h4>
+<div mat-dialog-content>
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    
+    <mat-form-field>
+      <mat-label>Podaj Imię i Nazwisko</mat-label>
+      <input matInput type="text" name="fullName" formControlName="fullName">
+    </mat-form-field>
+    <br>
+    <input type = "submit" value = "Send">
+  </form> 
 
-<mat-form-field class="example-form-field">
-    <mat-label>Clearable input</mat-label>
-    <input matInput type="text">
-    <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-      <mat-icon>close</mat-icon>
-    </button>
-  </mat-form-field>
+{{odczyt}}
   
-<br>
-<mat-grid-list cols="4" rowHeight="100px">
-    <mat-grid-tile
-        *ngFor="let tile of tiles"
-        [colspan]="tile.cols"
-        [rowspan]="tile.rows"
-        [style.background]="tile.color">
-      {{tile.text}}
-    </mat-grid-tile>
-  </mat-grid-list>
+</div>
+
+
+
+
+
+
+
+ 
+
+   
+
+
+      
+
+
+
+
+  
+
   
   
   

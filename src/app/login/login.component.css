@@ -1,8 +1,12 @@
-.przycisk {
-    float: right;
-    width: 10px;
+.task-header {
+    background-color: transparent;
+    padding: 0 5px;
+    height: 20px;
+}
+.fx-spacer {
+    flex: 1 1 auto;
 }
 
-.example-form-field {
-    width: 100%;
-  }
+.naglowek {
+    background-color: hsla(0, 0%, 50%, 0.979); 
+}

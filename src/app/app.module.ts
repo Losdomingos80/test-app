@@ -11,6 +11,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list'; 
 import { MatInputModule } from '@angular/material/input'; 
 import { MatIconModule } from '@angular/material/icon'; 
+import { MatToolbarModule } from '@angular/material/toolbar';
+import  {  FormsModule,  ReactiveFormsModule  }  from  '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,10 @@ import { MatIconModule } from '@angular/material/icon';
     MatCardModule,
     MatGridListModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatToolbarModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
