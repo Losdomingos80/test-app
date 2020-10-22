@@ -9,6 +9,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list'; 
+import { MatInputModule } from '@angular/material/input'; 
+import { MatIconModule } from '@angular/material/icon'; 
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatButtonModule,
     MatDialogModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatInputModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

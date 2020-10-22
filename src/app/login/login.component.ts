@@ -17,6 +17,8 @@ export class LoginComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<LoginComponent>) { }
 
+  value = 'Clear me';
+
   tiles: Tile[] = [
     {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
     {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
