@@ -1,2 +1,12 @@
 <button mat-raised-button id="logout-button" (click)="openModal()">Logowanie</button>
+<BR><BR>
+    <li 
+
+    *ngFor="let post of posts"
+
+    class="list-group-item">
+
+    {{ post.title }}
+
+</li>
 <router-outlet></router-outlet>

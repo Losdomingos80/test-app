@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 import { LoginComponent } from './login/login.component';
+import { OdczytajService } from './services/odczytaj.service';
 
 
 @Component({
@@ -12,10 +13,23 @@ import { LoginComponent } from './login/login.component';
 export class AppComponent {
   title = 'test-app';
   zmienna: any;
+  posts: any;
 
-  constructor(public matDialog: MatDialog) {
-
+  constructor(public matDialog: MatDialog, private odczyt:OdczytajService) {
+    this.pobierz_dane();
   }
+
+  pobierz_dane() {
+
+    this.odczyt.getPosts()
+
+      .subscribe(response => {
+
+        this.posts = response;
+
+      });
+
+}
 
   openModal() {
     const dialogConfig = new MatDialogConfig();
