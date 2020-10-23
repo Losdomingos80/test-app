@@ -31,6 +31,27 @@ export class AppComponent {
 
 }
 
+
+createPost(input: any){
+
+  let post = {title: input.value};
+
+  input.value = '';
+
+
+
+  this.odczyt.create(post)
+
+    .subscribe((response: { id }) => {
+
+      post['id'] = response.id;
+
+      this.posts.splice(0,0, post);
+
+    });
+
+}
+
   openModal() {
     const dialogConfig = new MatDialogConfig();
     // The user can't close the dialog by clicking outside its body
